@@ -1,53 +1,53 @@
 # Esp8266 Youtube Api  
 
-##  РќР°СЃС‚СЂРѕР№РєР°
+##  Настройка
                                           
-              youtube_api.server(Р°РґСЂРµСЃ СЃРµСЂРІРµСЂР°,РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ statistics,"РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ","РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ","key");
-    РќР°РїСЂРёРјРµСЂ  youtube_api.server("192.168.1.170","/youtube/statistics.php","/youtube/channels.php","/youtube/channels_id.php","kIys7WFP6ISc64lr4mmBuutDw8jig");
-              РљР°Рє РїРѕР»СѓС‡РёС‚СЊ key СЂР°СЃСЃРєР°Р·Р°РЅРѕ РІ РІРёРґРµРѕ https://www.youtube.com/watch?v=qoDVvKV8PDc
+              youtube_api.server(адрес сервера,путь к файлу statistics,"путь к файлу","путь к файлу","key");
+    Например  youtube_api.server("192.168.1.170","/youtube/statistics.php","/youtube/channels.php","/youtube/channels_id.php","kIys7WFP6ISc64lr4mmBuutDw8jig");
+              Как получить key рассказано в видео https://www.youtube.com/watch?v=qoDVvKV8PDc
 
 
-## Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРЅС„РѕСЂРјР°С†РёСЋ РїСЂРѕ  РІРёРґРµРѕ
+## Возвращает информацию про  видео
 
                youtube_api.statistics("video_id");
 
-    РќР°РїСЂРёРјРµСЂ   https://www.youtube.com/watch?v=Re1ZT5nNjiA
+    Например   https://www.youtube.com/watch?v=Re1ZT5nNjiA
 	           youtube_api.statistics("Re1ZT5nNjiA");
              
 
-        Р’РѕР·РІСЂР°С‰Р°РµРјР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ
+        Возвращаемая информация
   
-       youtube_api.view        KРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕСЃРјРѕС‚СЂРѕРІ РЅР° РІРёРґРµРѕ (int)
-       youtube_api.like        KРѕР»РёС‡РµСЃС‚РІРѕ Р»Р°Р№РєРѕРІ РЅР° РІРёРґРµРѕ (int)
-       youtube_api.dislike     KРѕР»РёС‡РµСЃС‚РІРѕ РґРёР·Р»Р°Р№РєРѕРІ РЅР° РІРёРґРµРѕ (int)
-       youtube_api.comment     KРѕР»РёС‡РµСЃС‚РІРѕ РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ (int)
+       youtube_api.view        Kоличество просмотров на видео (int)
+       youtube_api.like        Kоличество лайков на видео (int)
+       youtube_api.dislike     Kоличество дизлайков на видео (int)
+       youtube_api.comment     Kоличество комментариев (int)
 
        )
   
- ## Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ  Р°РєРєР°СѓРЅС‚Рµ РµСЃР»Рё Р·Р°РґР°РЅРѕ РёРјСЏ РєР°РЅР°Р»Р°      
+ ## Возвращает информацию о  аккаунте если задано имя канала      
    
              youtube_api.account("channel name");
 
-   РќР°РїСЂРёРјРµСЂ  https://www.youtube.com/user/Keddrcom
+   Например  https://www.youtube.com/user/Keddrcom
              youtube_api.account("Keddrcom");  
   
-        Р’РѕР·РІСЂР°С‰Р°РµРјР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ
+        Возвращаемая информация
   
-       youtube_api.subscriberCount     РџРѕРґРїРёСЃС‡РёРєРё (int)
-       youtube_api.viewCount           РљРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕСЃРјРѕС‚СЂРѕРІ РЅР° РєР°РЅР°Р»Рµ (int)
-       youtube_api.videoCount          РљРѕР»РёС‡РµСЃС‚РІРѕ РІРёРґРµРѕ РЅР° РєР°РЅР°Р»Рµ (int) 
+       youtube_api.subscriberCount     Подписчики (int)
+       youtube_api.viewCount           Количество просмотров на канале (int)
+       youtube_api.videoCount          Количество видео на канале (int) 
     
- ## Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ  Р°РєРєР°СѓРЅС‚Рµ РµСЃР»Рё РЅРµ Р·Р°РґР°РЅРѕ РёРјСЏ РєР°РЅР°Р»Р°      
+ ## Возвращает информацию о  аккаунте если не задано имя канала      
    
              youtube_api.account_id("channel name");
 
-   РќР°РїСЂРёРјРµСЂ  https://www.youtube.com/channel/UCSpU8Y1aoqBSAwh8DBpiM9A
+   Например  https://www.youtube.com/channel/UCSpU8Y1aoqBSAwh8DBpiM9A
              youtube_api.account_id("UCSpU8Y1aoqBSAwh8DBpiM9A"); 
   
-        Р’РѕР·РІСЂР°С‰Р°РµРјР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ
+        Возвращаемая информация
   
-       youtube_api.subscriberCount     РџРѕРґРїРёСЃС‡РёРєРё (int)
-       youtube_api.viewCount           РљРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕСЃРјРѕС‚СЂРѕРІ РЅР° РєР°РЅР°Р»Рµ (int)
-       youtube_api.videoCount          РљРѕР»РёС‡РµСЃС‚РІРѕ РІРёРґРµРѕ РЅР° РєР°РЅР°Р»Рµ (int) 
+       youtube_api.subscriberCount     Подписчики (int)
+       youtube_api.viewCount           Количество просмотров на канале (int)
+       youtube_api.videoCount          Количество видео на канале (int) 
 
  
